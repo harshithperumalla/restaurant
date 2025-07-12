@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback - Tasty Trails</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("https://c1.wallpaperflare.com/preview/322/187/713/restaurant-bar-signs-rustic.jpg") no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .feedback-wrapper {
+      max-width: 900px;
+      width: 100%;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    .feedback-entry {
+      margin-bottom: 25px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      border-left: 5px solid #f39c12;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .feedback-entry h3 {
+      margin-bottom: 15px;
+      color: #d35400;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fdfdfd;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #f39c12;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #f39c12;
+      color: white;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #d35400;
+    }
+
+    @media (max-width: 768px) {
+      .feedback-wrapper {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Share Your Feedback</h1>
+
+  <div class="feedback-wrapper">
+    <form id="feedbackForm">
+
+      <div class="feedback-entry">
+        <h3>Feedback #1</h3>
+        <div class="form-group">
+          <label for="name1">Your Name</label>
+          <input type="text" id="name1" name="name[]" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="restaurant1">Restaurant</label>
+          <input type="text" id="restaurant1" name="restaurant[]" placeholder="e.g. Sweet Treats" required />
+        </div>
+        <div class="form-group">
+          <label for="feedback1">Your Feedback</label>
+          <textarea id="feedback1" name="feedback[]" rows="4" placeholder="Your comments..." required></textarea>
+        </div>
+      </div>
+
+      <div id="moreFeedbacks"></div>
+
+      <button type="button" class="btn" onclick="addFeedback()">+ Add Another Feedback</button>
+      <button type="submit" class="btn">Submit All Feedback</button>
+
+    </form>
+  </div>
+
+  <script>
+    let count = 1;
+
+    function addFeedback() {
+      count++;
+      const container = document.getElementById('moreFeedbacks');
+
+      const entry = document.createElement('div');
+      entry.className = 'feedback-entry';
+      entry.innerHTML = `
+        <h3>Feedback #${count}</h3>
+        <div class="form-group">
+          <label for="name${count}">Your Name</label>
+          <input type="text" id="name${count}" name="name[]" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="restaurant${count}">Restaurant</label>
+          <input type="text" id="restaurant${count}" name="restaurant[]" placeholder="e.g. Ocean Flavors" required />
+        </div>
+        <div class="form-group">
+          <label for="feedback${count}">Your Feedback</label>
+          <textarea id="feedback${count}" name="feedback[]" rows="4" placeholder="Your comments..." required></textarea>
+        </div>
+      `;
+      container.appendChild(entry);
+    }
+
+    document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Thank you! Your feedback has been submitted.");
+      // Here you can send data using fetch() or AJAX
+    });
+  </script>
+
+</body>
+</html>
