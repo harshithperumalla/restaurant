@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up Form</title>
+  <style>
+    /* your CSS same as you posted */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: url("https://c1.wallpaperflare.com/preview/322/187/713/restaurant-bar-signs-rustic.jpg") no-repeat center center fixed; background-size: cover; min-height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 40px; }
+    h1 { font-size: 48px; font-weight: bold; margin-bottom: 20px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+    .container { width: 400px; background-color: rgba(255, 255, 255, 0.85); padding: 30px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 6px; font-weight: bold; color: #333; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="password"] { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
+    input[type="submit"] { width: 100%; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 6px; background-color: #5a5abc; color: white; border: none; cursor: pointer; transition: 0.3s; }
+    input[type="submit"]:hover { background-color: #0000be; }
+    .check-box label { display: flex; align-items: center; font-weight: normal; color: #333; }
+    .check-box input { margin-right: 10px; }
+  </style>
+</head>
+
+<body>
+  <h1>Sign Up</h1>
+
+  <div class="container">
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="recovery">Recovery Password</label>
+        <input type="password" name="recovery" id="recovery" placeholder="Enter recovery password" required />
+      </div>
+
+      <div class="form-group check-box">
+        <label><input type="checkbox" required /> I agree to the terms of service</label>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Submit" />
+      </div>
+      <a href="login.html" class="back-link">← Back to Login</a>
+    </form>
+  </div>
+
+ 
+})
+  </script>
+
+</body>
+</html>
