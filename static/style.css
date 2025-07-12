@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-weight: bolder;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url("https://c4.wallpaperflare.com/wallpaper/636/794/321/cafe-with-a-view-wallpaper-preview.jpg");
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.login-wrapper {
+    width: 400px;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+}
+
+form h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    position: relative;
+    margin: 15px 0;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.input-field input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+    transform: translateY(-120%);
+    top: 10px;
+    font-size: 0.8rem;
+}
+
+.password-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 35px 0;
+    color: rgb(7, 7, 7);
+}
+
+.password-option label {
+    display: flex;
+    align-items: center;
+}
+
+.password-option label p {
+    margin-left: 8px;
+}
+
+#remember {
+    accent-color: black;
+}
+
+.login-wrapper a {
+    color: darkred;
+    text-decoration: none;
+}
+
+.login-wrapper a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: rgb(247, 247, 247);
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 3px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: bolder;
+}
+
+.a{
+    text-decoration: none;
+}
+
+button:hover {
+    background: rgba(225, 225, 255, 0.15);
+    color: rgb(0, 0, 0);
+    border-color: whitesmoke;
+}
+
+.account-option {
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(112, 94, 216);
+}
+
+h2 {
+    color: rgb(0, 0, 0);
+}
+
+.back-link {
+    margin-top: 15px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
